@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.packt.movie.model.NewUser" table="UserInfo">
+		<meta attribute="class-description">
+			This class contains the UserInfo detail.
+		</meta>
+		<id name="UserID"  column="UserID">
+			<generator class="increment"></generator>
+		</id>
+		<property name="email" column="Email" />
+		<property name="passWord" column="Password"  />
+		<property name="saveCardInfo" column="SaveCardInfo"  />
+		<property name="expirationMonth" column="ExpirationMonth"
+			/>
+		<property name="expirationYear" column="ExpirationYear"  />
+		<property name="firstName" column="FirstName"  />
+		<property name="lastName" column="LastName"  />
+		<property name="zipCode" column="ZipCode"  />
+		<property name="creditCardNumber" column="CreditCardNumber"
+			/>
+		
+	
+	</class>
+
+	<class name="com.packt.movie.model.PurchaseInfo" table="PURCHASEINFO">
+		<meta attribute="class-description">
+			This class contains the UserInfo detail.
+		</meta>
+		<id name="UserID" type="int" column="UserID">
+			<generator class="increment"></generator>
+		</id>
+		<property name="PurchaseId" column="PurchaseID"  />
+		<!-- <property name="UserId" column="UserID" type="int" /> -->
+		<property name="MovieID" column="MovieID" />
+		<property name="NumberOfMovieTickets" column="NumberOfTickets"
+			 />
+		<property name="TimeID" column="TimeID"  />
+		<property name="TransactionStatus" column="TransactionStatus"
+			/>
+		<property name="MailSend" column="MailSend"  />
+	</class>
+
+
+	
+	
+	<class name="com.packt.movie.model.MovieList" table="MOVIE_LIST">
+		<meta attribute="class-description">
+			This class contains the Movie details.
+		</meta>
+		<id name="movieID"  column="movieID">
+			<generator class="increment"></generator>
+		</id>
+		<property name="movieDate" column="movieDate"  />
+		<property name="movieName" column="movieName"  />
+		<property name="movieDuration" column="movieDuration"  />
+			<property name="priceID" column="PriceID"  />
+			<property name="show1" column="Show1"  />
+			<property name="show2" column="Show2"  />
+			<property name="show3" column="Show3"  />
+			
+		
+	</class>
+	
+	<class name="com.packt.movie.model.TimeInfo" table="TIMEINFO1">
+		<meta attribute="class-description">
+			This class contains the Movie TimeInfo details.
+		</meta>
+		<id name="TimeID" type="TimeID" column="TimeID">
+			<generator class="increment"></generator>
+		</id>
+		<property name="MovieTime" column="MovieTime"  />
+		<property name="RecordStatus" column="RecordStatus" />
+		</class>
+</hibernate-mapping>
